@@ -12,7 +12,7 @@ import FirstAidKit from '../assets/first-aid-kit.png'
 export default function ProductListItem(props) {
     const {product, onPress} = props
     return (<TouchableOpacity onPress={onPress}><View style={styles.productView}>
-        <Image style={styles.productImage} source={product.image} />
+        <Image style={styles.productImage} source={FirstAidKit} />
         <Text style={styles.productTitle}>{product.name}</Text>
     </View></TouchableOpacity>)
 }
