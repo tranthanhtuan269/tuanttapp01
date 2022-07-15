@@ -12,11 +12,11 @@ import Megaphone from '../assets/megaphone.png'
 import SpinalBoard from '../assets/spinal-board.png'
 
 export default function CategoryListItem(props) {
-    const {category} = props
-    return <View style={styles.categoryView}>
+    const {category, onPress} = props
+    return (<TouchableOpacity onPress={onPress}><View style={styles.categoryView}>
         <Text style={styles.categoryTitle}>{category.name}</Text>
         <Image style={styles.categoryImage} source={FirstAidKit} />
-    </View>
+    </View></TouchableOpacity>)
 }
 
 const styles = StyleSheet.create({
