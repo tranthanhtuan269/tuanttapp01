@@ -17,10 +17,10 @@ export default class Home extends React.Component {
   }
   render(){
     const { navigation } = this.props;
-    const {categories} = this.state;
+    const { categories} = this.state;
     return (
         <FlatList data={categories} contentContainerStyle={styles.scrollView}
-          renderItem={({item}) => <CategoryListItem category={item} onPress={ ()=> navigation.navigate('CategoryDetail', { categoryName: item.name})}/>}
+          renderItem={({item}) => <CategoryListItem category={item} onPress={ ()=> navigation.navigate('CategoryDetail', { categoryName: item.name })}/>}
           keyExtractor={item => `${item.id}`}
           />
     )
@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   scrollView:{
+    paddingTop: 16,
     paddingLeft: 16,
     paddingRight: 16,
   }
