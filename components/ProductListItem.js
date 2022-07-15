@@ -12,15 +12,14 @@ import FirstAidKit from '../assets/first-aid-kit.png'
 export default function ProductListItem(props) {
     const {product, onPress} = props
     return (<TouchableOpacity onPress={onPress}><View style={styles.productView}>
+        <Image style={styles.productImage} source={product.image} />
         <Text style={styles.productTitle}>{product.name}</Text>
-        <Image style={styles.productImage} source={FirstAidKit} />
     </View></TouchableOpacity>)
 }
 
 const styles = StyleSheet.create({
     productView:{
         width: '100%',
-        height: 200,
         alignItems: 'center',
         padding: 16,
         borderRadius:8,
@@ -31,12 +30,13 @@ const styles = StyleSheet.create({
         marginBottom: 16
     },
     productImage:{
-        width: 64,
-        height: 64
+        width: 215,
+        height: 322,
+        paddingBottom: 16
     },
     productTitle:{
+        marginTop:16,
         textTransform: "uppercase",
-        marginBottom: 10,
         fontWeight: "700"
     }
 })

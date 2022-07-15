@@ -1,20 +1,31 @@
 import React from 'react';
+import axios from 'axios';
 import { StyleSheet, FlatList } from 'react-native';
 import ProductListItem from '../components/ProductListItem';
 
+var category = null;
 export default class CategoryDetail extends React.Component {
   constructor(props) {
     super(props);
+    category = this.props.route.params;
     this.state = {
       products: [
-        { id: 1, name: 'a'},
-        { id: 2, name: 'b'},
-        { id: 3, name: 'c'},
-        { id: 4, name: 'd'},
-        { id: 5, name: 'e'}
       ]
     }
   }
+  
+  componentDidMount(){
+    axios.get('http://65.21.190.120/categories/' + category.categoryId)
+    .then(res => {
+      this.setState({
+        products: res.data.data
+      })
+    })
+    .catch(error => {
+      console.error(error)
+    })
+  }
+
   render(){
     const { navigation } = this.props;
     const { route } = this.props.route;

@@ -1,8 +1,10 @@
 {
   "expo": {
-    "name": "StartProject01",
-    "slug": "StartProject01",
-    "version": "1.0.0",
+    "name": "My Truyen",
+    "slug": "my-truyen",
+    "version": "1.0.1",
+    "owner": "tranthanhtuan269",
+    "description": "An application to view stories",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",

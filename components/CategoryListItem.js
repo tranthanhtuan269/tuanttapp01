@@ -13,16 +13,17 @@ import SpinalBoard from '../assets/spinal-board.png'
 
 export default function CategoryListItem(props) {
     const {category, onPress} = props
-    return (<TouchableOpacity onPress={onPress}><View style={styles.categoryView}>
-        <Text style={styles.categoryTitle}>{category.name}</Text>
-        <Image style={styles.categoryImage} source={FirstAidKit} />
-    </View></TouchableOpacity>)
+    return (
+    <TouchableOpacity onPress={onPress}>
+        <View style={styles.categoryView}>
+            <Text style={styles.categoryTitle}>{category.name}</Text>
+        </View>
+    </TouchableOpacity>
+    )
 }
 
 const styles = StyleSheet.create({
     categoryView:{
-        width: '100%',
-        height: 200,
         alignItems: 'center',
         padding: 16,
         borderRadius:8,
@@ -32,13 +33,8 @@ const styles = StyleSheet.create({
         shadowOffset: {width:0, height:0},
         marginBottom: 16
     },
-    categoryImage:{
-        width: 64,
-        height: 64
-    },
     categoryTitle:{
         textTransform: "uppercase",
-        marginBottom: 10,
         fontWeight: "700"
     }
 })
