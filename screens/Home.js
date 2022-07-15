@@ -16,11 +16,11 @@ export default class Home extends React.Component {
     }
   }
   render(){
-    const {navigation } = this.props;
+    const { navigation } = this.props;
     const {categories} = this.state;
     return (
         <FlatList data={categories} contentContainerStyle={styles.scrollView}
-          renderItem={({item}) => <CategoryListItem category={item} onPress={ ()=> navigation.navigate('CategoryDetail')}/>}
+          renderItem={({item}) => <CategoryListItem category={item} onPress={ ()=> navigation.navigate('CategoryDetail', { categoryName: item.name})}/>}
           keyExtractor={item => `${item.id}`}
           />
     )

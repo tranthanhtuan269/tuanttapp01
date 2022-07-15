@@ -12,7 +12,7 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName='Home'>
         <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="CategoryDetail" component={CategoryDetail} />
+        <Stack.Screen name="CategoryDetail" component={CategoryDetail} options={({ route }) => ({ title: route.params.categoryName })}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
